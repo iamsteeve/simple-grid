@@ -1,0 +1,26 @@
+/**
+ ** Resets
+ **/
+@import '~normalize-scss/sass/normalize';
+@include normalize();
+
+/**
+ ** Variables del theme
+ **/
+@import 'variables';
+
+/**
+ ** Base HTML tags como animaciones, typography, utilidades
+ **/
+@import 'base';
+
+/**
+ ** Elementos Generalizados estilizados
+ **/
+@import 'elements';
+
+/**
+ ** Son todos los estilos personalizados
+ **/
+@import 'custom';
+
