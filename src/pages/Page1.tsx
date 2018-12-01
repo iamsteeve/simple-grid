@@ -4,13 +4,13 @@ export default () => (
     <React.Fragment>
 
         <div className="row">
-            <div className="col-xs-12 ">Column 12</div>
+            <div className="col-xs-12 "><p>col-xs-12</p></div>
 
         </div>
 
         <div className="row">
             <div className="col-xs-12">
-                COlum12
+                <p>col-xs-12</p>
             </div>
         </div>
     </React.Fragment>
