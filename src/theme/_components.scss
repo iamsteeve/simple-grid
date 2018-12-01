@@ -1,0 +1,66 @@
+/**
+ ** Navbar Component
+ **/
+nav {
+    @include media('>phone') {
+        ul {
+            list-style: none;
+
+            .active {
+                font-weight: bold;
+                color: red;
+            }
+        }
+    }
+
+    @include media('>tablet') {
+
+        ul {
+            list-style: none;
+
+            li {
+                display: inline;
+                padding: 10px;
+            }
+
+            .active {
+                font-weight: bold;
+                color: red;
+            }
+        }
+
+    }
+    @include media('>=980px') {
+
+        ul {
+            list-style: none;
+
+            li {
+                display: inline;
+                padding: 10px;
+            }
+
+            .active {
+                font-weight: bold;
+                color: red;
+            }
+
+        }
+
+    }
+    @include media('>desktop') {
+
+        ul {
+            li {
+                display: inline;
+                padding: 10px;
+            }
+
+            .active {
+                font-weight: bold;
+                color: red;
+            }
+        }
+
+    }
+}

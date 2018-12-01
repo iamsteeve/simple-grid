@@ -16,113 +16,139 @@
 
 /** BreakPoints Generics */
 
-$breakpoints: (phone: 320px, tablet: 600px, desktop: 1024px);
-
 
 /** XS **/
+
+$breakpoints: (phone: 320px, tablet: 600px, desktop: 1024px);
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+    
+    float: left;
+    padding: $spacing;
+    border-radius: 25px;
+    height: 400px;
+    border: solid 2px dodgerblue;
+}
+
+
 @include media('>phone') {
     @for $i from 1 through $columns-number {
         .col-xs-#{$i} {
             width: ($col-size * $i);
-            float: left;
-            padding: $spacing;
-            border-radius: 25px;
-            height: 400px;
-            border: solid 2px dodgerblue;
         }
-    }
-    .active {
-        font-weight: bold;
-        color:red;
     }
 
 }
 
+
+
 /** SM **/
+
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12 {
+
+    float: left;
+    padding: $spacing;
+    border-radius: 25px;
+    height: 400px;
+    border: solid 2px dodgerblue;
+}
+
+
+
 @include media('>tablet') {
     @for $i from 1 through $columns-number {
         .col-sm-#{$i} {
             width: ($col-size * $i);
-            float: left;
-            padding: $spacing;
-            border-radius: 25px;
-            height: 400px;
-            border: solid 2px dodgerblue;
+        }
+    }
 
-        }
-    }
-    nav {
-        ul {
-            li {
-                display: inline;
-                padding: 10px;
-                
-            }
-            .active {
-                font-weight: bold;
-                color:red;
-            }
-        }
-    }
+
 }
 
 /** MD **/
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12 {
+
+    float: left;
+    padding: $spacing;
+    border-radius: 25px;
+    height: 400px;
+    border: solid 2px dodgerblue;
+}
+
 @include media('>=980px') {
     @for $i from 1 through $columns-number {
         .col-md-#{$i} {
             width: ($col-size * $i);
-            float: left;
-            padding: $spacing;
+        }
+    }
 
-            border-radius: 25px;
-            height: 400px;
-            border: solid 2px dodgerblue;
-        }
-    }
-    nav {
-        ul {
-            list-style: none;
-            li {
-                display: inline;
-                padding: 10px;
-            }
-            .active {
-                font-weight: bold;
-                color:red;
-            }
-            
-        }
-    }
 }
 
+
 /** LG **/
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+
+    float: left;
+    padding: $spacing;
+    border-radius: 25px;
+    height: 400px;
+    border: solid 2px dodgerblue;
+}
+
+
 @include media('>desktop') {
     @for $i from 1 through $columns-number {
         .col-lg-#{$i} {
             width: ($col-size * $i);
-            float: left;
-            padding: $spacing;
-            border-radius: 25px;
-            height: 400px;
-            border: solid 2px dodgerblue;
 
         }
     }
-    nav {
-        ul {
-            li {
-                display: inline;
-                padding: 10px;
-            }
-            .active {
-                font-weight: bold;
-                color:red;
-            }
-        }
-    }
-}
 
-.size-test {
-}
 
+}
 
