@@ -1,32 +1,35 @@
-
 /**
  ** Esto permite agregar la fuente de prueba especial para mockups
  */
 @font-face {
-  font-family: "Redacted";
-  src: url("redacted-font/redacted-regular.eot");
-  src: url("redacted-font/redacted-regular.woff2") format("woff2"),
-       url("redacted-font/redacted-regular.woff") format("woff"),
-       url("redacted-font/redacted-regular.svg#filename") format("svg");
+    font-family: "Redacted";
+    src: url("redacted-font/redacted-regular.eot");
+    src: url("redacted-font/redacted-regular.woff2") format("woff2"),
+    url("redacted-font/redacted-regular.woff") format("woff"),
+    url("redacted-font/redacted-regular.svg#filename") format("svg");
 }
+
 /**
  ** Estilos a todos los elementos
  */
 * {
-  box-sizing: border-box;
-  font-family: 'Redacted', sans-serif;
+    box-sizing: border-box;
+    font-family: $fonts, sans-serif;
+    background-color: #{map_get($theme, 'background')};
 }
 
-/**
- ** Estilos a el elemento <p>
- */
-p {
-  font-size: large;
-}
+/** Elimina o aplica al imprimir **/
+@media print {
+    * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-/**
- ** Estilos a el elemento <a>
- */
-a {
-  font-size: large;
+    }
+
+    aside {
+        display: none !important;
+    }
+
+    a::after{
+        content: " ("attr(href)")";
+    }
 }

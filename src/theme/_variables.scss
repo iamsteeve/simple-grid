@@ -1,5 +1,25 @@
+/** Tamaño máximo del container **/
 $size-max-container: 90%;
+
+
+/** Tamaño máximo del container fluid **/
 $size-max-container-fluid: 100%;
+
+
+/** Tamaño de las columnas **/
 $col-size: 8.333%;
+
+/** Numero de columnas **/
 $columns-number:12;
+
+/** Numero de espaciado entre las columnas **/
 $spacing: 20px;
+
+/** Tamaños por default de los breakpoints **/
+$breakpoints: (phone: 0px, tablet: 600px, medium: 960px, desktop: 1280px);
+
+/** Colores **/
+$theme: (primary: #0B3954, secondary: #BFD7EA, extra: #FF6663, background: #FEFFFE);
+
+/** Fonts **/
+$fonts: 'Redacted';
