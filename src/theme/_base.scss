@@ -1,12 +1,32 @@
+
+/**
+ ** Esto permite agregar la fuente de prueba especial para mockups
+ */
+@font-face {
+  font-family: "Redacted";
+  src: url("redacted-font/redacted-regular.eot");
+  src: url("redacted-font/redacted-regular.woff2") format("woff2"),
+       url("redacted-font/redacted-regular.woff") format("woff"),
+       url("redacted-font/redacted-regular.svg#filename") format("svg");
+}
+/**
+ ** Estilos a todos los elementos
+ */
 * {
   box-sizing: border-box;
-  font-family: 'Dosis', sans-serif;
-
+  font-family: 'Redacted', sans-serif;
 }
 
+/**
+ ** Estilos a el elemento <p>
+ */
 p {
-  font-size: xx-large;
+  font-size: large;
 }
-a{
+
+/**
+ ** Estilos a el elemento <a>
+ */
+a {
   font-size: large;
 }
