@@ -21,9 +21,11 @@ p {
 }
 
 /**
- ** Estilos a el elemento <a>
+ ** Estilos a el elemento <nav>
  */
-a {
-    font-family: "Dosis", sans-serif;
-    font-size: large;
+nav {
+    a {
+        font-family: "Dosis", sans-serif;
+        font-size: large;
+    }
 }

@@ -10,6 +10,9 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Index from "./pages/Index";
+// @ts-ignore
+import Loader from 'react-loader-spinner'
+
 
 export interface IRoute {
     path: string;
@@ -29,8 +32,29 @@ const RoutesList: IRoute[] = [
 
 ]
 
-class App extends React.Component {
+interface IStateApp {
+    loading: boolean;
+}
+
+
+class App extends React.Component<{}, IStateApp> {
+    public state: IStateApp = {
+        loading: true
+    };
+
+    public componentDidMount(): void {
+        this.setState({loading:false});
+    }
+
     public render() {
+        const {loading} = this.state;
+        if (loading){
+            return(
+                <main>
+                    <Loader type="Bars" color="#somecolor" height={80} width={80} />
+                </main>
+            )
+        }
         return (
             <Router>
                 <div className="container">
