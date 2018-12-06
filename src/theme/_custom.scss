@@ -1,3 +1,21 @@
 #somecolor{
-    color: #FF6663;
+    background-color: #FF6663;
+}
+
+.examples-enter {
+    opacity: 0.01;
+}
+
+.examples-enter.examples-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.examples-leave {
+    opacity: 1;
+}
+
+.examples-leave.examples-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-out;
 }

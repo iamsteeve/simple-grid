@@ -1,4 +1,7 @@
 import * as React from 'react';
+import image1 from "../img/img1.jpg";
+import image2 from "../img/img2.jpg";
+import image3 from "../img/img3.jpg";
 
 export default () => (
     <React.Fragment>
@@ -18,6 +21,11 @@ export default () => (
                     </p>
 
                 </aside>
+                <picture>
+                    <source srcSet={image1} media="(max-width: 420px)" />
+                    <source srcSet={image2} media="(max-width: 720px)" />
+                    <img className="fluid-img" src={image3} alt="Foto" />
+                </picture>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3 col-lg-2 ">
                 <aside>
@@ -32,6 +40,11 @@ export default () => (
                         eius.
                     </p>
                 </aside>
+                <picture>
+                    <source srcSet={image1} media="(max-width: 420px)" />
+                    <source srcSet={image2} media="(max-width: 720px)" />
+                    <img className="fluid-img" src={image3} alt="Foto" />
+                </picture>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8 ">
                 <section>

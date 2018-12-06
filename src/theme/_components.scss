@@ -6,41 +6,104 @@
  ** Navbar Component
  **/
 nav {
-    @include media('>phone') {
-        ul {
+    overflow: hidden;
 
+    #responsive-navbar {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+
+        h1 {
+            font-family: "Dosis", sans-serif;
+            padding-left: 5%;
+        }
+
+        .bt-menu {
+            font-family: 'IcoMoon-Free', serif !important;
+            font-size: 48px;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        span {
+
+        }
+    }
+
+
+    @include media('>phone', '<=tablet') {
+
+        #ulResponsive {
+            display: flex;
+            flex-flow: column;
             list-style: none;
-            padding: 0;
+
+            li {
+                background-color: transparent;
+                padding: 10px 60px;
+            }
 
             .active {
                 font-weight: bold;
                 color: red;
             }
         }
+        ul {
+            display: none;
+
+        }
+
     }
 
     @include media('>tablet') {
+        #ulResponsive {
+            display: none;
 
+        }
+        #responsive-navbar {
+            display: none;
+        }
         ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
             li {
-                display: inline;
                 padding: 10px;
+                font-size: xx-large;
+
+                a {
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+
+                .active {
+                    font-weight: bold;
+                    color: red;
+                }
             }
 
-            .active {
-                font-weight: bold;
-                color: red;
-            }
+
         }
 
     }
     @include media('>=980px') {
+        #ulResponsive {
+            display: none;
 
+        }
+        #responsive-navbar {
+            display: none;
+        }
         ul {
             list-style: none;
             padding: 0;
+
             li {
                 display: inline;
                 padding: 10px;
@@ -55,10 +118,18 @@ nav {
 
     }
     @include media('>desktop') {
+        #ulResponsive {
+            display: none
 
+        }
+        #responsive-navbar {
+            display: none;
+
+        }
         ul {
             list-style: none;
             padding: 0;
+
             li {
                 display: inline;
                 padding: 10px;
@@ -72,8 +143,6 @@ nav {
 
     }
 }
-
-
 
 
 /**
@@ -94,11 +163,13 @@ nav {
         }
     }
 }
+
 /**
  ** Componente para hacer fluidas las imágenes
  */
 .fluid-img {
     width: 100%;
+    height: auto;
 }
 
 .text-center {
@@ -108,9 +179,84 @@ nav {
 .no-prototype {
     font-family: "Dosis", sans-serif;
 }
+
 .home {
-    color: #{map_get($theme, 'primary')}!important;
+    color: darkorange !important;
 }
+
+.full-screen {
+    width: 100%;
+}
+
+.hide-screen {
+    width: 0%;
+}
+
+.container-title-site {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .title-site {
+        font-family: "Dosis", sans-serif;
+    }
+}
+.icon-moon{
+    font-family: 'IcoMoon-Free', serif;
+    font-size: 36px;
+    padding-right: 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.2s;
+
+    a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: snow;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+
+
+}
+
+.overlay-content {
+    position: relative;
+    top: 7%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
 
 /** BreakPoints Generics **/
 /** XS **/
@@ -140,7 +286,6 @@ nav {
     }
 
 }
-
 
 
 /** SM **/

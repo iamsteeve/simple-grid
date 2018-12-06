@@ -1,15 +1,13 @@
 /**
  ** Esto permite agregar la fuente de prueba especial para mockups
  */
-/*
+
 @font-face {
-    font-family: "Redacted";
-    src: url("redacted-font/redacted-regular.eot");
-    src: url("redacted-font/redacted-regular.woff2") format("woff2"),
-    url("redacted-font/redacted-regular.woff") format("woff"),
-    url("redacted-font/redacted-regular.svg#filename") format("svg");
+    font-family: 'IcoMoon-Free';
+    src: url('./fonts/IcoMoon-Free.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-*/
 
 /**
  ** Estilos a todos los elementos

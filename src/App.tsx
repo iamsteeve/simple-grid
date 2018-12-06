@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import Index from "./pages/Index";
 // @ts-ignore
 import Loader from 'react-loader-spinner'
-
+import Title from "./components/Title";
 
 export interface IRoute {
     path: string;
@@ -21,37 +21,50 @@ export interface IRoute {
     name: string;
     extraClassName?: string;
 }
-const RoutesList: IRoute[] = [
-    { path: '/', name:'Home', isExact: true, component: Index, extraClassName: 'home' },
-    { path: '/page1', name:'Layout 1', isExact: false, component: Page1 },
-    { path: '/page2', name:'Layout 2', isExact: false, component: Page2 },
-    { path: '/page3', name:'Layout 3', isExact: false, component: Page3 },
-    { path: '/page4', name:'Layout 4', isExact: false, component: Page4 },
-    { path: '/page5', name:'Layout 5', isExact: false, component: Page5 },
-    { path: '/page6', name:'Layout 6', isExact: false, component: Page6 }
 
-]
 
-interface IStateApp {
+export interface IStateApp {
     loading: boolean;
+    isMenuOpen: boolean;
 }
 
 
 class App extends React.Component<{}, IStateApp> {
+    private routesList: IRoute[] = [
+        {path: '/', name: 'Home', isExact: true, component: Index, extraClassName: 'home'},
+        {path: '/page1', name: 'Layout 1', isExact: false, component: Page1},
+        {path: '/page2', name: 'Layout 2', isExact: false, component: Page2},
+        {path: '/page3', name: 'Layout 3', isExact: false, component: Page3},
+        {path: '/page4', name: 'Layout 4', isExact: false, component: Page4},
+        {path: '/page5', name: 'Layout 5', isExact: false, component: Page5},
+        {path: '/page6', name: 'Layout 6', isExact: false, component: Page6}
+    ]
+
     public state: IStateApp = {
-        loading: true
+        loading: true,
+        isMenuOpen: false
     };
 
     public componentDidMount(): void {
-        this.setState({loading:false});
+        this.setState({loading: false});
+    }
+
+    public handleClickMenu = (event: React.SyntheticEvent): void => {
+        event.preventDefault();
+        this.setState((prevState, props) => ({
+            ...prevState,
+            isMenuOpen: !prevState.isMenuOpen
+        }));
     }
 
     public render() {
-        const {loading} = this.state;
-        if (loading){
-            return(
+
+
+        const {loading, isMenuOpen} = this.state;
+        if (loading) {
+            return (
                 <main>
-                    <Loader type="Bars" color="#somecolor" height={80} width={80} />
+                    <Loader type="Bars" color="#somecolor" height={80} width={80}/>
                 </main>
             )
         }
@@ -59,34 +72,32 @@ class App extends React.Component<{}, IStateApp> {
             <Router>
                 <div className="container">
                     <Header>
-                        <Navbar>
-                            <ul>
-                                {RoutesList.map(({path, name,extraClassName}: IRoute, i) => (
-                                    <li key={i}>
-                                        <NavLink to={path} activeClassName="active" className={extraClassName ? extraClassName : ""}>{name}</NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </Navbar>
+                        <Title>Site Title Layout</Title>
+                        <Navbar handleClickMenu={this.handleClickMenu}
+                                routes={this.routesList}
+                                isMenuOpen={isMenuOpen}
+                        />
                     </Header>
 
                     <main>
                         {
-                            RoutesList.map(({path,isExact, component}: IRoute, i)=>(
-                                <Route key={i} path={path} exact={isExact} component={component} />
+                            this.routesList.map(({path, isExact, component}: IRoute, i) => (
+                                <Route key={i} path={path} exact={isExact} component={component}/>
                             ))
                         }
 
                     </main>
-                    
+
                     <Footer>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique voluptatum atque est debitis,
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique voluptatum atque est
+                            debitis,
                             magni ex veniam fugiat quaerat inventore obcaecati necessitatibus praesentium iste impedit
                             quisquam quo eum aliquid. Repellat, atque.
                         </p>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique voluptatum atque est debitis,
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique voluptatum atque est
+                            debitis,
                             magni ex veniam fugiat quaerat inventore obcaecati necessitatibus praesentium iste impedit
                             quisquam quo eum aliquid. Repellat, atque.
                         </p>

@@ -1,4 +1,8 @@
 import * as React from 'react';
+import image1 from '../img/img1.jpg';
+import image2 from '../img/img2.jpg'
+import image3 from '../img/img3.jpg'
+
 
 export default () => (
     <React.Fragment>
@@ -35,6 +39,11 @@ export default () => (
                             magni ex veniam fugiat quaerat inventore obcaecati necessitatibus praesentium iste impedit
                             quisquam quo eum aliquid. Repellat, atque.
                         </p>
+                        <picture>
+                            <source srcSet={image1} media="(max-width: 420px)" />
+                            <source srcSet={image2} media="(max-width: 720px)" />
+                            <img className="fluid-img" src={image3} alt="Foto" />
+                        </picture>
                     </article>
                     </section>
             
